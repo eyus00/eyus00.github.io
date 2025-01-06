@@ -25,7 +25,7 @@
     justify-content: center;
     width: 50px;
     height: 50px;
-    color: #000;
+    color: #333333; /* Updated color */
     font-size: 26px; /* Increased icon size */
     text-align: center;
     border-radius: 12px;
