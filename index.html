@@ -5,44 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>@eyus00</title>
   <style>
-    body {
+    html, body {
       margin: 0;
-      padding: 2rem;
-      font-family: 'Segoe UI', sans-serif;
-      background: #fff;
-      color: #000;
+      padding: 0;
+      background: #2c2c2c;
+      color: #ffffff;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
       text-align: center;
+    }
+
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
     }
 
     .logo {
       display: grid;
-      grid-template-columns: repeat(5, 10px);
-      grid-template-rows: repeat(5, 10px);
-      gap: 2px;
-      background: #2c2c2c;
-      width: fit-content;
-      margin: 0 auto 2rem;
-      padding: 6px;
+      grid-template-columns: repeat(5, 12px);
+      grid-template-rows: repeat(5, 12px);
     }
 
     .dot {
-      width: 10px;
-      height: 10px;
+      width: 12px;
+      height: 12px;
       background: transparent;
     }
 
     .dot.active {
-      background: #fff;
+      background: #ffffff;
     }
 
     h1 {
-      font-size: 1.5rem;
-      margin: 0 0 1.5rem;
+      font-size: 1.25rem;
+      margin: 0;
     }
 
     a {
-      text-decoration: underline;
       color: inherit;
+      text-decoration: underline;
       transition: opacity 0.2s ease;
     }
 
@@ -52,12 +58,11 @@
 
     .email {
       display: inline-block;
-      margin-bottom: 2rem;
+      margin-top: 0.5rem;
       padding: 0.25rem 0.75rem;
-      border: 1px solid #000;
+      border: 1px solid #fff;
       text-decoration: none;
       color: inherit;
-      transition: opacity 0.2s ease;
     }
 
     .email:hover {
@@ -70,15 +75,15 @@
       margin: 0;
       display: flex;
       justify-content: center;
-      flex-wrap: wrap;
       gap: 0.5rem;
       font-size: 0.95rem;
+      flex-wrap: wrap;
     }
 
     ul li::after {
       content: "•";
       margin: 0 0.5rem;
-      color: #000;
+      color: #fff;
     }
 
     ul li:last-child::after {
@@ -87,50 +92,45 @@
   </style>
 </head>
 <body>
-  <div class="logo">
-    <!-- Grid: 1 to 25, fill .active as per your design -->
-    <!-- Active positions: 1,2,4,5,10,11,13,15,16,21,22,24,25 -->
-    <!-- Loop from 1 to 25 -->
-    <!-- Row 1 -->
-    <div class="dot active"></div>
-    <div class="dot active"></div>
-    <div class="dot"></div>
-    <div class="dot active"></div>
-    <div class="dot active"></div>
-    <!-- Row 2 -->
-    <div class="dot"></div>
-    <div class="dot"></div>
-    <div class="dot"></div>
-    <div class="dot"></div>
-    <div class="dot active"></div>
-    <!-- Row 3 -->
-    <div class="dot active"></div>
-    <div class="dot"></div>
-    <div class="dot active"></div>
-    <div class="dot"></div>
-    <div class="dot active"></div>
-    <!-- Row 4 -->
-    <div class="dot active"></div>
-    <div class="dot"></div>
-    <div class="dot"></div>
-    <div class="dot active"></div>
-    <div class="dot active"></div>
-    <!-- Row 5 -->
-    <div class="dot"></div>
-    <div class="dot active"></div>
-    <div class="dot active"></div>
-    <div class="dot"></div>
-    <div class="dot active"></div>
-  </div>
+  <div class="wrapper">
+    <div class="logo">
+      <!-- Active positions: 1,2,4,5,10,11,13,15,16,21,22,24,25 -->
+      <div class="dot active"></div>  <!-- 1 -->
+      <div class="dot active"></div>  <!-- 2 -->
+      <div class="dot"></div>         <!-- 3 -->
+      <div class="dot active"></div>  <!-- 4 -->
+      <div class="dot active"></div>  <!-- 5 -->
+      <div class="dot"></div>         <!-- 6 -->
+      <div class="dot"></div>         <!-- 7 -->
+      <div class="dot"></div>         <!-- 8 -->
+      <div class="dot"></div>         <!-- 9 -->
+      <div class="dot active"></div>  <!-- 10 -->
+      <div class="dot active"></div>  <!-- 11 -->
+      <div class="dot"></div>         <!-- 12 -->
+      <div class="dot active"></div>  <!-- 13 -->
+      <div class="dot"></div>         <!-- 14 -->
+      <div class="dot active"></div>  <!-- 15 -->
+      <div class="dot active"></div>  <!-- 16 -->
+      <div class="dot"></div>         <!-- 17 -->
+      <div class="dot"></div>         <!-- 18 -->
+      <div class="dot"></div>         <!-- 19 -->
+      <div class="dot"></div>         <!-- 20 -->
+      <div class="dot active"></div>  <!-- 21 -->
+      <div class="dot active"></div>  <!-- 22 -->
+      <div class="dot"></div>         <!-- 23 -->
+      <div class="dot active"></div>  <!-- 24 -->
+      <div class="dot active"></div>  <!-- 25 -->
+    </div>
 
-  <h1>@eyus00</h1>
-  <a href="mailto:eyus00@duck.com" class="email">email</a>
-  <ul>
-    <li><a href="https://github.com/eyus00" target="_blank">github</a></li>
-    <li><a href="https://t.me/eyus00" target="_blank">telegram</a></li>
-    <li><a href="https://x.com/eyus00" target="_blank">twitter</a></li>
-    <li><a href="https://discord.com/users/652309996381405184" target="_blank">discord</a></li>
-    <li><a href="https://open.spotify.com/user/31bwbfo6gfwaa5xlk5yrg3dbdyqa" target="_blank">spotify</a></li>
-  </ul>
+    <h1>@eyus00</h1>
+    <a href="mailto:eyus00@duck.com" class="email">email</a>
+    <ul>
+      <li><a href="https://github.com/eyus00" target="_blank">github</a></li>
+      <li><a href="https://t.me/eyus00" target="_blank">telegram</a></li>
+      <li><a href="https://x.com/eyus00" target="_blank">twitter</a></li>
+      <li><a href="https://discord.com/users/652309996381405184" target="_blank">discord</a></li>
+      <li><a href="https://open.spotify.com/user/31bwbfo6gfwaa5xlk5yrg3dbdyqa" target="_blank">spotify</a></li>
+    </ul>
+  </div>
 </body>
 </html>
