@@ -1,65 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
-    <link rel="icon" type="image/x-icon" href="https://raw.githubusercontent.com/eyus00/portfolio-test/main/media/favicon.ico">
-    <link rel="stylesheet" href="styles/navbar.css">
-    <link rel="stylesheet" href="styles/responsive.css">
-    <link rel="stylesheet" href="styles/background.css">
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="styles/links.css">
-    <script src="https://kit.fontawesome.com/9cb968ce8e.js" crossorigin="anonymous"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>eyus00</title>
+  <link rel="icon" href="https://raw.githubusercontent.com/eyus00/portfolio-test/main/media/favicon.ico" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/9cb968ce8e.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      margin: 0; padding: 0; box-sizing: border-box;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0f0f0f;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 2rem;
+    }
+    img {
+      width: 100px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+    }
+    h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    .highlight {
+      color: #0ff;
+    }
+    .description {
+      font-size: 1rem;
+      margin-bottom: 1.5rem;
+    }
+    .contact-button {
+      display: inline-block;
+      margin-bottom: 2rem;
+      padding: 0.5rem 1rem;
+      background: #0ff;
+      color: #000;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: bold;
+    }
+    .social {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      padding: 0;
+    }
+    .social a {
+      color: #fff;
+      font-size: 1.5rem;
+      transition: color 0.2s;
+    }
+    .social a:hover {
+      color: #0ff;
+    }
+  </style>
 </head>
 <body>
-    <canvas id="sketch" class="background"></canvas>
-    <div class="container">
-        <header class="header">
-            <div class="logo-container light-mode">
-                <img src="https://avatars.githubusercontent.com/u/155847959" alt="Logo">
-            </div>
-            <div class="mode-switcher">
-                <button class="dark-mode-toggle"><i class="far fa-moon"></i></button>
-            </div>
-        </header>
-        <div class="content">
-            <h1>hi there,<br> i am <span class="highlight-box"><span class="animated-text" id="animated-text"></span><span class="cursor" id="cursor">_</span></span>!</h1>
-            <p class="description">Novice Dev & Web Designer</p>
-            <a href="mailto:eyus00@duck.com" class="contact-button">Contact Me</a>
-        </div>
-        <div class="social-container">
-            <ul class="social">
-                <li class="github">
-                    <a href="https://github.com/eyus00" target="_blank">
-                        <i class="fa-brands fa-github"></i>
-                    </a>
-                </li>
-                <li class="telegram">
-                    <a href="https://t.me/eyus00" target="_blank">
-                        <i class="fa-brands fa-telegram"></i>
-                    </a>
-                </li>
-                <li class="twitter">
-                    <a href="https://x.com/eyus00" target="_blank">
-                        <i class="fa-brands fa-x-twitter"></i>
-                    </a>
-                </li>
-                <li class="discord">
-                    <a href="https://discord.com/users/652309996381405184" target="_blank">
-                        <i class="fa-brands fa-discord"></i>
-                    </a>
-                </li>
-                <li class="spotify">
-                    <a href="https://open.spotify.com/user/31bwbfo6gfwaa5xlk5yrg3dbdyqa?si=5b2d71d3f0ef4ba4" target="_blank">
-                        <i class="fa-brands fa-spotify"></i>
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </div>
-    <script src="scripts/main.js"></script>
-    <script src="scripts/background.js"></script>
+  <img src="https://avatars.githubusercontent.com/u/155847959" alt="Avatar" />
+  <h1>hi there,<br> i am <span class="highlight">eyus00</span>!</h1>
+  <p class="description">Novice Dev & Web Designer</p>
+  <a href="mailto:eyus00@duck.com" class="contact-button">Contact Me</a>
+  <ul class="social">
+    <li><a href="https://github.com/eyus00" target="_blank"><i class="fa-brands fa-github"></i></a></li>
+    <li><a href="https://t.me/eyus00" target="_blank"><i class="fa-brands fa-telegram"></i></a></li>
+    <li><a href="https://x.com/eyus00" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></li>
+    <li><a href="https://discord.com/users/652309996381405184" target="_blank"><i class="fa-brands fa-discord"></i></a></li>
+    <li><a href="https://open.spotify.com/user/31bwbfo6gfwaa5xlk5yrg3dbdyqa?si=5b2d71d3f0ef4ba4" target="_blank"><i class="fa-brands fa-spotify"></i></a></li>
+  </ul>
 </body>
 </html>
