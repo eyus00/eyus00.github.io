@@ -4,52 +4,18 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>@eyus00</title>
-  <link href="https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --dark-color: #2c2c2c;
-      --light-color: #ffffff;
-      --gif-texture: url(https://64.media.tumblr.com/da60c13b478dda09ab90c27e880983b8/tumblr_nd4pwdPKdc1tun3l0o1_1280.gifv);
-      --main-transition: all 0.2s ease-in-out;
-    }
-
-    * {
-      box-sizing: border-box;
-    }
-
     html, body {
       margin: 0;
       padding: 0;
-      background: var(--dark-color);
-      color: var(--light-color);
-      font-family: 'Fira Mono', monospace;
+      background: #2c2c2c;
+      color: #ffffff;
+      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
       height: 100%;
       display: flex;
       align-items: center;
       justify-content: center;
       text-align: center;
-      overflow: hidden;
-      position: relative;
-    }
-
-    body::after {
-      content: '';
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background-image: var(--gif-texture);
-      background-size: cover;
-      background-repeat: no-repeat;
-      background-position: center;
-      mix-blend-mode: screen;
-      opacity: 0;
-      transition: opacity 0.4s ease-in-out;
-      z-index: 0;
-      pointer-events: none;
-    }
-
-    body.buzz::after {
-      opacity: 0.6;
     }
 
     .wrapper {
@@ -57,15 +23,14 @@
       flex-direction: column;
       align-items: center;
       gap: 1.5rem;
-      position: relative;
-      z-index: 1;
     }
 
     .logo {
       display: grid;
       grid-template-columns: repeat(5, 12px);
       grid-template-rows: repeat(5, 12px);
-      gap: 0;
+      gap: 2px;
+      margin-bottom: 1rem;
     }
 
     .dot {
@@ -81,28 +46,43 @@
     h1 {
       font-size: 1.25rem;
       margin: 0;
-      cursor: pointer;
-      position: relative;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: underline;
-      transition: opacity 0.2s ease;
-    }
-
-    a:hover {
-      opacity: 0.6;
-    }
-
-    .email {
       display: inline-block;
-      margin-top: 0.5rem;
+      margin-left: 10px;
+    }
+
+    .holographic-button {
+      display: inline-block;
       padding: 0.25rem 0.75rem;
-      border: 1px solid #fff;
       text-decoration: none;
-      color: inherit;
-      transition: var(--main-transition);
+      background: #111;
+      color: #0ff;
+      font-size: 1rem;
+      border-radius: 5px;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    .holographic-button::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(0deg, transparent, transparent 30%, rgba(0, 255, 255, 0.3));
+      transform: rotate(-45deg);
+      transition: all 0.3s ease;
+      opacity: 0;
+    }
+
+    .holographic-button:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    }
+
+    .holographic-button:hover::before {
+      opacity: 1;
+      transform: rotate(-45deg) translateY(100%);
     }
 
     ul {
@@ -114,7 +94,6 @@
       gap: 0.5rem;
       font-size: 0.95rem;
       flex-wrap: wrap;
-      position: relative;
     }
 
     ul li::after {
@@ -127,73 +106,53 @@
       content: "";
     }
 
-    .lines {
-      position: absolute;
-      top: -20px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 100%;
-      height: 200px;
-      pointer-events: none;
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-
-    .line {
-      position: absolute;
-      height: 1px;
-      background: white;
-      transform-origin: left;
-      transform: scaleX(0);
-      transition: transform 0.3s;
-    }
-
-    h1:hover ~ .lines {
-      opacity: 1;
-    }
-
-    h1:hover ~ .lines .line {
-      transform: scaleX(1);
-    }
   </style>
 </head>
 <body>
   <div class="wrapper">
+    <!-- Logo grid -->
     <div class="logo">
-      <!-- Active blocks: 1,2,4,5,10,11,13,15,16,21,22,24,25 -->
-      <div class="dot active"></div><div class="dot active"></div><div class="dot"></div><div class="dot active"></div><div class="dot active"></div>
-      <div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot active"></div>
-      <div class="dot active"></div><div class="dot"></div><div class="dot active"></div><div class="dot"></div><div class="dot active"></div>
-      <div class="dot active"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div>
-      <div class="dot active"></div><div class="dot active"></div><div class="dot"></div><div class="dot active"></div><div class="dot active"></div>
+      <div class="dot active"></div>  <!-- 1 -->
+      <div class="dot active"></div>  <!-- 2 -->
+      <div class="dot"></div>         <!-- 3 -->
+      <div class="dot active"></div>  <!-- 4 -->
+      <div class="dot active"></div>  <!-- 5 -->
+      <div class="dot"></div>         <!-- 6 -->
+      <div class="dot"></div>         <!-- 7 -->
+      <div class="dot"></div>         <!-- 8 -->
+      <div class="dot"></div>         <!-- 9 -->
+      <div class="dot active"></div>  <!-- 10 -->
+      <div class="dot active"></div>  <!-- 11 -->
+      <div class="dot"></div>         <!-- 12 -->
+      <div class="dot active"></div>  <!-- 13 -->
+      <div class="dot"></div>         <!-- 14 -->
+      <div class="dot active"></div>  <!-- 15 -->
+      <div class="dot active"></div>  <!-- 16 -->
+      <div class="dot"></div>         <!-- 17 -->
+      <div class="dot"></div>         <!-- 18 -->
+      <div class="dot"></div>         <!-- 19 (now inactive) -->
+      <div class="dot"></div>         <!-- 20 -->
+      <div class="dot active"></div>  <!-- 21 -->
+      <div class="dot active"></div>  <!-- 22 (now active) -->
+      <div class="dot"></div>         <!-- 23 -->
+      <div class="dot active"></div>  <!-- 24 -->
+      <div class="dot active"></div>  <!-- 25 -->
     </div>
 
-    <h1 id="username">@eyus00</h1>
-    <a href="mailto:eyus00@duck.com" class="email" id="email">email</a>
+    <!-- Username and email button -->
+    <div style="display: flex; align-items: center;">
+      <h1>@eyus00</h1>
+      <a href="mailto:eyus00@duck.com" class="holographic-button">email</a>
+    </div>
 
-    <ul id="socials">
+    <!-- Social Links -->
+    <ul>
       <li><a href="https://github.com/eyus00" target="_blank">github</a></li>
       <li><a href="https://t.me/eyus00" target="_blank">telegram</a></li>
       <li><a href="https://x.com/eyus00" target="_blank">twitter</a></li>
       <li><a href="https://discord.com/users/652309996381405184" target="_blank">discord</a></li>
       <li><a href="https://open.spotify.com/user/31bwbfo6gfwaa5xlk5yrg3dbdyqa" target="_blank">spotify</a></li>
     </ul>
-
-    <div class="lines">
-      <div class="line" style="top: 10px; left: 50%; width: 100px; transform: rotate(30deg) scaleX(0);"></div>
-      <div class="line" style="top: 10px; left: 50%; width: 100px; transform: rotate(-30deg) scaleX(0);"></div>
-      <div class="line" style="top: 10px; left: 50%; width: 100px; transform: rotate(90deg) scaleX(0);"></div>
-    </div>
   </div>
-
-  <script>
-    const email = document.getElementById('email');
-    email.addEventListener('mouseenter', () => {
-      document.body.classList.add('buzz');
-    });
-    email.addEventListener('mouseleave', () => {
-      document.body.classList.remove('buzz');
-    });
-  </script>
 </body>
 </html>
