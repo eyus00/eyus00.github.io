@@ -5,89 +5,52 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>@eyus00</title>
   <style>
-    :root {
-      color-scheme: light dark;
-    }
-
     body {
       margin: 0;
       padding: 2rem;
       font-family: sans-serif;
-      background: white;
-      color: black;
+      background: #fff;
+      color: #000;
       text-align: center;
     }
-
-    @media (prefers-color-scheme: dark) {
-      body {
-        background: black;
-        color: white;
-      }
-    }
-
-    img {
-      width: 100px;
-      margin-bottom: 1rem;
-    }
-
     h1 {
-      margin: 0 0 1rem;
-      font-size: 1.25rem;
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
     }
-
+    .email {
+      display: inline-block;
+      margin-bottom: 2rem;
+      padding: 0.25rem 0.75rem;
+      border: 1px solid #000;
+      text-decoration: none;
+      color: inherit;
+    }
     ul {
       list-style: none;
       padding: 0;
-      margin: 2rem 0 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
     }
-
     li {
-      margin: 0.5rem 0;
+      display: inline;
     }
-
     a {
       text-decoration: none;
       color: inherit;
     }
-
-    .contact-button {
-      display: inline-block;
-      margin-top: 2rem;
-      padding: 0.6rem 1.2rem;
-      font-weight: bold;
-      font-size: 1rem;
-      border: none;
-      border-radius: 4px;
-      background: linear-gradient(to right, #000, #444);
-      color: #fff;
-      text-decoration: none;
-      transition: transform 0.2s ease;
-    }
-
-    .contact-button:hover {
-      transform: scale(1.05);
-    }
-
-    @media (prefers-color-scheme: light) {
-      .contact-button {
-        background: linear-gradient(to right, #ddd, #aaa);
-        color: #000;
-      }
-    }
   </style>
 </head>
 <body>
-  <img src="https://avatars.githubusercontent.com/u/155847959" alt="Avatar" />
   <h1>@eyus00</h1>
-
+  <a href="mailto:eyus00@duck.com" class="email">email</a>
   <ul>
-    <li><a href="https://github.com/eyus00" target="_blank">GitHub</a></li>
-    <li><a href="https://t.me/eyus00" target="_blank">Telegram</a></li>
-    <li><a href="https://x.com/eyus00" target="_blank">Twitter</a></li>
-    <li><a href="https://discord.com/users/652309996381405184" target="_blank">Discord</a></li>
-    <li><a href="https://open.spotify.com/user/31bwbfo6gfwaa5xlk5yrg3dbdyqa" target="_blank">Spotify</a></li>
+    <li><a href="https://github.com/eyus00" target="_blank">github</a></li>
+    <li><a href="https://t.me/eyus00" target="_blank">telegram</a></li>
+    <li><a href="https://x.com/eyus00" target="_blank">twitter</a></li>
+    <li><a href="https://discord.com/users/652309996381405184" target="_blank">discord</a></li>
+    <li><a href="https://open.spotify.com/user/31bwbfo6gfwaa5xlk5yrg3dbdyqa" target="_blank">spotify</a></li>
   </ul>
-
-  <a href="mailto:eyus00@duck.com" class="contact-button">Contact Me</a>
 </body>
 </html>
