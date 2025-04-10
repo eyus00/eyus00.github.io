@@ -4,13 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>@eyus00</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --dark-color: #2c2c2c;
+      --light-color: #ffffff;
+      --gif-texture: url(https://64.media.tumblr.com/da60c13b478dda09ab90c27e880983b8/tumblr_nd4pwdPKdc1tun3l0o1_1280.gifv);
+      --main-transition: all 0.2s ease-in-out;
+      --font-clean: ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     html, body {
       margin: 0;
       padding: 0;
-      background: #2c2c2c;
-      color: #ffffff;
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      background: var(--dark-color);
+      color: var(--light-color);
+      font-family: var(--font-clean);
       height: 100%;
       display: flex;
       align-items: center;
@@ -29,6 +42,7 @@
       display: grid;
       grid-template-columns: repeat(5, 12px);
       grid-template-rows: repeat(5, 12px);
+      gap: 0;
     }
 
     .dot {
@@ -63,9 +77,30 @@
       border: 1px solid #fff;
       text-decoration: none;
       color: inherit;
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      transition: var(--main-transition);
     }
 
-    .email:hover {
+    .email::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: var(--gif-texture);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      mix-blend-mode: screen;
+      opacity: 0;
+      z-index: -1;
+      transition: opacity 0.4s ease-in-out;
+    }
+
+    .email:hover::after {
       opacity: 0.6;
     }
 
@@ -94,7 +129,7 @@
 <body>
   <div class="wrapper">
     <div class="logo">
-      <!-- Active positions: 1,2,4,5,10,11,13,15,16,21,22,24,25 -->
+      <!-- Active blocks: 1,2,4,5,10,11,13,15,16,21,22,24,25 -->
       <div class="dot active"></div>  <!-- 1 -->
       <div class="dot active"></div>  <!-- 2 -->
       <div class="dot"></div>         <!-- 3 -->
