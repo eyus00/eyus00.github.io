@@ -2,21 +2,54 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>@eyus00</title>
   <style>
     body {
       margin: 0;
       padding: 2rem;
-      font-family: sans-serif;
+      font-family: 'Segoe UI', sans-serif;
       background: #fff;
       color: #000;
       text-align: center;
     }
+
+    .logo {
+      display: grid;
+      grid-template-columns: repeat(5, 10px);
+      grid-template-rows: repeat(5, 10px);
+      gap: 2px;
+      background: #2c2c2c;
+      width: fit-content;
+      margin: 0 auto 2rem;
+      padding: 6px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      background: transparent;
+    }
+
+    .dot.active {
+      background: #fff;
+    }
+
     h1 {
       font-size: 1.5rem;
-      margin-bottom: 2rem;
+      margin: 0 0 1.5rem;
     }
+
+    a {
+      text-decoration: underline;
+      color: inherit;
+      transition: opacity 0.2s ease;
+    }
+
+    a:hover {
+      opacity: 0.6;
+    }
+
     .email {
       display: inline-block;
       margin-bottom: 2rem;
@@ -24,25 +57,72 @@
       border: 1px solid #000;
       text-decoration: none;
       color: inherit;
+      transition: opacity 0.2s ease;
     }
+
+    .email:hover {
+      opacity: 0.6;
+    }
+
     ul {
       list-style: none;
       padding: 0;
+      margin: 0;
       display: flex;
       justify-content: center;
-      gap: 1rem;
       flex-wrap: wrap;
+      gap: 0.5rem;
+      font-size: 0.95rem;
     }
-    li {
-      display: inline;
+
+    ul li::after {
+      content: "•";
+      margin: 0 0.5rem;
+      color: #000;
     }
-    a {
-      text-decoration: none;
-      color: inherit;
+
+    ul li:last-child::after {
+      content: "";
     }
   </style>
 </head>
 <body>
+  <div class="logo">
+    <!-- Grid: 1 to 25, fill .active as per your design -->
+    <!-- Active positions: 1,2,4,5,10,11,13,15,16,21,22,24,25 -->
+    <!-- Loop from 1 to 25 -->
+    <!-- Row 1 -->
+    <div class="dot active"></div>
+    <div class="dot active"></div>
+    <div class="dot"></div>
+    <div class="dot active"></div>
+    <div class="dot active"></div>
+    <!-- Row 2 -->
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot active"></div>
+    <!-- Row 3 -->
+    <div class="dot active"></div>
+    <div class="dot"></div>
+    <div class="dot active"></div>
+    <div class="dot"></div>
+    <div class="dot active"></div>
+    <!-- Row 4 -->
+    <div class="dot active"></div>
+    <div class="dot"></div>
+    <div class="dot"></div>
+    <div class="dot active"></div>
+    <div class="dot active"></div>
+    <!-- Row 5 -->
+    <div class="dot"></div>
+    <div class="dot active"></div>
+    <div class="dot active"></div>
+    <div class="dot"></div>
+    <div class="dot active"></div>
+  </div>
+
   <h1>@eyus00</h1>
   <a href="mailto:eyus00@duck.com" class="email">email</a>
   <ul>
