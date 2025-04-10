@@ -4,13 +4,26 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>@eyus00</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --dark-color: #2c2c2c;
+      --light-color: #ffffff;
+      --gif-texture: url(https://64.media.tumblr.com/da60c13b478dda09ab90c27e880983b8/tumblr_nd4pwdPKdc1tun3l0o1_1280.gifv);
+      --main-transition: all 0.2s ease-in-out;
+      --font-clean: ui-monospace, SFMono-Regular, Menlo, monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     html, body {
       margin: 0;
       padding: 0;
-      background: #2c2c2c;
-      color: #ffffff;
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+      background: var(--dark-color);
+      color: var(--light-color);
+      font-family: var(--font-clean);
       height: 100%;
       display: flex;
       align-items: center;
@@ -29,8 +42,7 @@
       display: grid;
       grid-template-columns: repeat(5, 12px);
       grid-template-rows: repeat(5, 12px);
-      gap: 2px;
-      margin-bottom: 1rem;
+      gap: 0;
     }
 
     .dot {
@@ -46,43 +58,50 @@
     h1 {
       font-size: 1.25rem;
       margin: 0;
-      display: inline-block;
-      margin-left: 10px;
     }
 
-    .holographic-button {
+    a {
+      color: inherit;
+      text-decoration: underline;
+      transition: opacity 0.2s ease;
+    }
+
+    a:hover {
+      opacity: 0.6;
+    }
+
+    .email {
       display: inline-block;
+      margin-top: 0.5rem;
       padding: 0.25rem 0.75rem;
+      border: 1px solid #fff;
       text-decoration: none;
-      background: #111;
-      color: #0ff;
-      font-size: 1rem;
-      border-radius: 5px;
+      color: inherit;
       position: relative;
-      transition: all 0.3s ease;
+      overflow: hidden;
+      z-index: 1;
+      transition: var(--main-transition);
     }
 
-    .holographic-button::before {
+    .email::after {
       content: '';
       position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: linear-gradient(0deg, transparent, transparent 30%, rgba(0, 255, 255, 0.3));
-      transform: rotate(-45deg);
-      transition: all 0.3s ease;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: var(--gif-texture);
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      mix-blend-mode: screen;
       opacity: 0;
+      z-index: -1;
+      transition: opacity 0.4s ease-in-out;
     }
 
-    .holographic-button:hover {
-      transform: scale(1.05);
-      box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
-    }
-
-    .holographic-button:hover::before {
-      opacity: 1;
-      transform: rotate(-45deg) translateY(100%);
+    .email:hover::after {
+      opacity: 0.6;
     }
 
     ul {
@@ -105,13 +124,12 @@
     ul li:last-child::after {
       content: "";
     }
-
   </style>
 </head>
 <body>
   <div class="wrapper">
-    <!-- Logo grid -->
     <div class="logo">
+      <!-- Active blocks: 1,2,4,5,10,11,13,15,16,21,22,24,25 -->
       <div class="dot active"></div>  <!-- 1 -->
       <div class="dot active"></div>  <!-- 2 -->
       <div class="dot"></div>         <!-- 3 -->
@@ -130,22 +148,17 @@
       <div class="dot active"></div>  <!-- 16 -->
       <div class="dot"></div>         <!-- 17 -->
       <div class="dot"></div>         <!-- 18 -->
-      <div class="dot"></div>         <!-- 19 (now inactive) -->
+      <div class="dot"></div>         <!-- 19 -->
       <div class="dot"></div>         <!-- 20 -->
       <div class="dot active"></div>  <!-- 21 -->
-      <div class="dot active"></div>  <!-- 22 (now active) -->
+      <div class="dot active"></div>  <!-- 22 -->
       <div class="dot"></div>         <!-- 23 -->
       <div class="dot active"></div>  <!-- 24 -->
       <div class="dot active"></div>  <!-- 25 -->
     </div>
 
-    <!-- Username and email button -->
-    <div style="display: flex; align-items: center;">
-      <h1>@eyus00</h1>
-      <a href="mailto:eyus00@duck.com" class="holographic-button">email</a>
-    </div>
-
-    <!-- Social Links -->
+    <h1>@eyus00</h1>
+    <a href="mailto:eyus00@duck.com" class="email">email</a>
     <ul>
       <li><a href="https://github.com/eyus00" target="_blank">github</a></li>
       <li><a href="https://t.me/eyus00" target="_blank">telegram</a></li>
