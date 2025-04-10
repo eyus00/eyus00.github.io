@@ -3,54 +3,91 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>eyus00</title>
+  <title>@eyus00</title>
   <style>
+    :root {
+      color-scheme: light dark;
+    }
+
     body {
       margin: 0;
       padding: 2rem;
       font-family: sans-serif;
-      background: #fff;
-      color: #000;
+      background: white;
+      color: black;
       text-align: center;
     }
+
+    @media (prefers-color-scheme: dark) {
+      body {
+        background: black;
+        color: white;
+      }
+    }
+
     img {
       width: 100px;
-      border-radius: 50%;
+      margin-bottom: 1rem;
     }
+
     h1 {
-      margin: 1rem 0 0.5rem;
-      font-size: 1.5rem;
+      margin: 0 0 1rem;
+      font-size: 1.25rem;
     }
-    p {
-      margin: 0.5rem 0 1.5rem;
-    }
-    a {
-      color: inherit;
-      text-decoration: underline;
-    }
-    .social {
+
+    ul {
       list-style: none;
       padding: 0;
-      display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 1.5rem;
+      margin: 2rem 0 1rem;
     }
-    .social li {
-      display: inline;
+
+    li {
+      margin: 0.5rem 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .contact-button {
+      display: inline-block;
+      margin-top: 2rem;
+      padding: 0.6rem 1.2rem;
+      font-weight: bold;
+      font-size: 1rem;
+      border: none;
+      border-radius: 4px;
+      background: linear-gradient(to right, #000, #444);
+      color: #fff;
+      text-decoration: none;
+      transition: transform 0.2s ease;
+    }
+
+    .contact-button:hover {
+      transform: scale(1.05);
+    }
+
+    @media (prefers-color-scheme: light) {
+      .contact-button {
+        background: linear-gradient(to right, #ddd, #aaa);
+        color: #000;
+      }
     }
   </style>
 </head>
 <body>
   <img src="https://avatars.githubusercontent.com/u/155847959" alt="Avatar" />
-  <h1>hi there,<br>i am eyus00!</h1>
-  <p>Novice Dev & Web Designer</p>
-  <p><a href="mailto:eyus00@duck.com">Contact Me</a></p>
-  <ul class="social">
+  <h1>@eyus00</h1>
+
+  <ul>
     <li><a href="https://github.com/eyus00" target="_blank">GitHub</a></li>
     <li><a href="https://t.me/eyus00" target="_blank">Telegram</a></li>
-    <li><a href="https://x.com/eyus00" target="_blank">X</a></li>
+    <li><a href="https://x.com/eyus00" target="_blank">Twitter</a></li>
     <li><a href="https://discord.com/users/652309996381405184" target="_blank">Discord</a></li>
+    <li><a href="https://open.spotify.com/user/31bwbfo6gfwaa5xlk5yrg3dbdyqa" target="_blank">Spotify</a></li>
   </ul>
+
+  <a href="mailto:eyus00@duck.com" class="contact-button">Contact Me</a>
 </body>
 </html>
