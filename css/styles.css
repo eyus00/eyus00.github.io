@@ -1,0 +1,385 @@
+:root {
+  --dark-bg: #2c2c2c;
+  --light-bg: #ffffff;
+  --dark-text: #ffffff;
+  --light-text: #2c2c2c;
+  --accent: #ff5e57;
+  --accent-hover: #ff3e2a;
+  --main-transition: all 0.2s ease-in-out;
+  --font-clean: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-clean);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 1rem;
+  transition: var(--main-transition);
+}
+
+/* System default theme */
+@media (prefers-color-scheme: dark) {
+  html:not([data-theme="light"]) body {
+    background: var(--dark-bg);
+    color: var(--dark-text);
+  }
+  html:not([data-theme="light"]) .dot.active {
+    background: var(--dark-text);
+  }
+  html:not([data-theme="light"]) ul li::after {
+    color: var(--dark-text);
+  }
+  html:not([data-theme="light"]) .email-text {
+    color: #bbb;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  html:not([data-theme="dark"]) body {
+    background: var(--light-bg);
+    color: var(--light-text);
+  }
+  html:not([data-theme="dark"]) .dot.active {
+    background: var(--light-text);
+  }
+  html:not([data-theme="dark"]) ul li::after {
+    color: var(--light-text);
+  }
+  html:not([data-theme="dark"]) h1,
+  html:not([data-theme="dark"]) a,
+  html:not([data-theme="dark"]) .spotify-toggle span {
+    color: var(--light-text);
+  }
+  html:not([data-theme="dark"]) .email-text {
+    color: #666;
+  }
+}
+
+/* Explicit theme overrides */
+html[data-theme="dark"] body {
+  background: var(--dark-bg);
+  color: var(--dark-text);
+}
+
+html[data-theme="dark"] .dot.active {
+  background: var(--dark-text);
+}
+
+html[data-theme="dark"] ul li::after {
+  color: var(--dark-text);
+}
+
+html[data-theme="dark"] .email-text {
+  color: #bbb;
+}
+
+html[data-theme="light"] body {
+  background: var(--light-bg);
+  color: var(--light-text);
+}
+
+html[data-theme="light"] .dot.active {
+  background: var(--light-text);
+}
+
+html[data-theme="light"] ul li::after {
+  color: var(--light-text);
+}
+
+html[data-theme="light"] h1,
+html[data-theme="light"] a,
+html[data-theme="light"] .spotify-toggle span {
+  color: var(--light-text);
+}
+
+html[data-theme="light"] .email-text {
+  color: #666;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1200px;
+  width: 100%;
+  padding: 1rem;
+}
+
+.logo-username-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  display: grid;
+  grid-template-columns: repeat(5, 12px);
+  grid-template-rows: repeat(5, 12px);
+  gap: 0;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  background: transparent;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin: 0;
+  cursor: pointer;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  font-weight: bold;
+  position: relative;
+  overflow: hidden;
+  transition: var(--main-transition);
+  font-size: 1rem;
+}
+
+.email {
+  padding: 0.75rem 1.25rem;
+  background-color: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 1.5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: var(--main-transition);
+  margin-bottom: 0.75rem;
+}
+
+.email:hover {
+  background-color: var(--accent-hover);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  font-size: 1rem;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+ul li {
+  position: relative;
+}
+
+ul li a {
+  text-decoration: underline;
+  transition: color 0.3s ease;
+}
+
+ul li a:hover {
+  color: var(--accent-hover);
+}
+
+/* Desktop: Add dots after github, telegram, twitter */
+ul li:nth-child(1)::after,
+ul li:nth-child(2)::after,
+ul li:nth-child(3)::after {
+  content: "•";
+  position: absolute;
+  right: -1.25rem;
+  font-size: 1rem;
+}
+
+/* Remove dot after discord */
+ul li:nth-child(4)::after {
+  content: none;
+}
+
+.notification {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--accent);
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 5px;
+  font-size: 1rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 12;
+}
+
+.notification.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.email-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.email-text {
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+#username {
+  cursor: pointer;
+}
+
+/* Spotify iframe styling */
+.spotify-player {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  height: 80px;
+  border-radius: 12px;
+  z-index: 10;
+}
+
+.spotify-player.hidden {
+  display: none;
+}
+
+/* Theme switcher styling */
+.theme-switcher {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1.25rem;
+}
+
+.theme-toggle {
+  display: none;
+}
+
+.theme-toggle + label {
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+  background-color: #666;
+  border-radius: 10px;
+  position: relative;
+  cursor: pointer;
+  transition: var(--main-transition);
+}
+
+.theme-toggle + label::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: #fff;
+  border-radius: 50%;
+  top: 2px;
+  left: 2px;
+  transition: var(--main-transition);
+}
+
+.theme-toggle:checked + label {
+  background-color: var(--accent);
+}
+
+.theme-toggle:checked + label::after {
+  left: 22px;
+}
+
+/* Spotify toggle styling */
+.spotify-toggle {
+  position: fixed;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 11;
+  padding: 2px 8px;
+}
+
+.spotify-toggle span {
+  font-family: var(--font-clean);
+  font-size: 0.8rem;
+  color: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+
+.spotify-toggle span:hover {
+  color: var(--accent-hover);
+  opacity: 1;
+}
+
+/* Mobile Layout: 2 links per row, closer together */
+@media (max-width: 768px) {
+  ul {
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  ul li {
+    width: 40%;
+    margin-bottom: 1rem;
+  }
+
+  /* Dots only after github and twitter */
+  ul li:nth-child(1)::after,
+  ul li:nth-child(3)::after {
+    content: "•";
+    right: -0.75rem;
+  }
+
+  /* Remove dots after telegram and discord */
+  ul li:nth-child(2)::after,
+  ul li:nth-child(4)::after {
+    content: none;
+  }
+
+  /* Adjust Spotify player for mobile */
+  .spotify-player {
+    width: 320px;
+    height: 80px;
+  }
+
+  .spotify-toggle {
+    bottom: 5px;
+  }
+}
+
+/* Further adjustments for very small screens */
+@media (max-width: 480px) {
+  ul li {
+    width: 40%;
+  }
+
+  h1 {
+    font-size: 1.25rem;
+  }
+
+  .spotify-player {
+    width: 280px;
+    height: 80px;
+  }
+
+  .spotify-toggle {
+    bottom: 5px;
+  }
+}
