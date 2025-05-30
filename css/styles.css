@@ -55,8 +55,7 @@ html, body {
     color: var(--light-text);
   }
   html:not([data-theme="dark"]) h1,
-  html:not([data-theme="dark"]) a,
-  html:not([data-theme="dark"]) .spotify-toggle span {
+  html:not([data-theme="dark"]) a {
     color: var(--light-text);
   }
   html:not([data-theme="dark"]) .email-text {
@@ -96,8 +95,7 @@ html[data-theme="light"] ul li::after {
 }
 
 html[data-theme="light"] h1,
-html[data-theme="light"] a,
-html[data-theme="light"] .spotify-toggle span {
+html[data-theme="light"] a {
   color: var(--light-text);
 }
 
@@ -244,22 +242,6 @@ ul li:nth-child(4)::after {
   cursor: pointer;
 }
 
-/* Spotify iframe styling */
-.spotify-player {
-  position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 400px;
-  height: 80px;
-  border-radius: 12px;
-  z-index: 10;
-}
-
-.spotify-player.hidden {
-  display: none;
-}
-
 /* Theme switcher styling */
 .theme-switcher {
   display: flex;
@@ -303,31 +285,6 @@ ul li:nth-child(4)::after {
   left: 22px;
 }
 
-/* Spotify toggle styling */
-.spotify-toggle {
-  position: fixed;
-  bottom: 5px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 11;
-  padding: 2px 8px;
-}
-
-.spotify-toggle span {
-  font-family: var(--font-clean);
-  font-size: 0.8rem;
-  color: inherit;
-  text-decoration: underline;
-  cursor: pointer;
-  opacity: 0.7;
-  transition: color 0.3s ease, opacity 0.3s ease;
-}
-
-.spotify-toggle span:hover {
-  color: var(--accent-hover);
-  opacity: 1;
-}
-
 /* Mobile Layout: 2 links per row, closer together */
 @media (max-width: 768px) {
   ul {
@@ -352,16 +309,6 @@ ul li:nth-child(4)::after {
   ul li:nth-child(4)::after {
     content: none;
   }
-
-  /* Adjust Spotify player for mobile */
-  .spotify-player {
-    width: 352px;
-    height: 80px;
-  }
-
-  .spotify-toggle {
-    bottom: 5px;
-  }
 }
 
 /* Further adjustments for very small screens */
@@ -372,14 +319,5 @@ ul li:nth-child(4)::after {
 
   h1 {
     font-size: 1.25rem;
-  }
-
-  .spotify-player {
-    width: 280px;
-    height: 80px;
-  }
-
-  .spotify-toggle {
-    bottom: 5px;
   }
 }
