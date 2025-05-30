@@ -355,7 +355,7 @@ ul li:nth-child(4)::after {
 
   /* Adjust Spotify player for mobile */
   .spotify-player {
-    width: 320px;
+    width: 352px;
     height: 80px;
   }
 
